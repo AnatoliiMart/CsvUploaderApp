@@ -1,0 +1,21 @@
+@{
+    ViewData["Title"] = "Upload CSV";
+}
+
+<div class="container mt-4">
+    <h2>Upload CSV File</h2>
+
+    <form asp-controller="Persons" asp-action="UploadCsv" enctype="multipart/form-data" method="post">
+        <div class="mb-3">
+            <label for="file" class="form-label">Choose CSV File</label>
+            <input type="file" class="form-control" id="file" name="file" accept=".csv" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Upload</button>
+    </form>
+
+    <hr />
+
+    <h3>Existing Records</h3>
+    <p>If you have uploaded data, you can view and manage it below:</p>
+    <a asp-controller="Persons" asp-action="List" class="btn btn-secondary">View Uploaded Data</a>
+</div>
